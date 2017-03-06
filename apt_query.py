@@ -5,6 +5,7 @@ from ansible.module_utils.basic import AnsibleModule
 import apt
 
 def main():
+    """Run the module."""
 
     module = AnsibleModule(
         argument_spec=dict(

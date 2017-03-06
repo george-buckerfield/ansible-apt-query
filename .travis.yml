@@ -8,4 +8,4 @@ install:
   - pip install pylint
   - pip install ansible
 
-script: pylint apt_query.py
+script: pylint apt_query.py --disable import-error
