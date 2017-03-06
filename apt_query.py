@@ -17,8 +17,6 @@ def main():
     packages = {}
     package = module.params['package']
 
-    keyerrormsg =
-
     try:
         if package == "all":
             for pkg in apt.Cache():
