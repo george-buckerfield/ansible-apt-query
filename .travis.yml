@@ -1,7 +1,12 @@
 language: python
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install python-apt python-setuptools python-distutils-extra
+
 install:
   - pip install pylint
   - pip install ansible
-  - pip install apt
+  - pip install python-apt
 
 script: pylint apt_query.py
