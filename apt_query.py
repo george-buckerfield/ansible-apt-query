@@ -1,4 +1,5 @@
 #!/usr/bin/python
+"""An Ansible module to query the Apt package cache."""
 
 from ansible.module_utils.basic import AnsibleModule
 import apt
@@ -6,15 +7,17 @@ import apt
 def main():
 
     module = AnsibleModule(
-        argument_spec = dict(
-            package = dict(default=None, aliases=['pkg', 'name'], type='str')
+        argument_spec=dict(
+            package=dict(default=None, aliases=['pkg', 'name'], type='str')
             ),
-        required_one_of = [['name']]
+        required_one_of=[['name']]
         )
 
     cache = apt.Cache()
     packages = {}
     package = module.params['package']
+
+    keyerrormsg =
 
     try:
         if package == "all":
@@ -33,7 +36,8 @@ def main():
                 installed = False
             module.exit_json(changed=False, package_info=packages, installed=installed)
     except KeyError:
+        message = "The package '%s' was not found in the apt-cache" % package
         installed = False
-        module.exit_json(msg="The package '%s' was not found in the apt-cache" % package, installed=installed)
+        module.exit_json(msg=message, installed=installed)
 if __name__ == '__main__':
     main()
