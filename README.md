@@ -1,7 +1,6 @@
 # Ansible Apt-Query Module
 
-[![Build Status](https://travis-ci.org/george-buckerfield/ansible-apt-query.svg?branch=master)]
-(https://travis-ci.org/george-buckerfield/ansible-apt-query)
+[![Build Status](https://travis-ci.org/george-buckerfield/ansible-apt-query.svg?branch=master)](https://travis-ci.org/george-buckerfield/ansible-apt-query)
 
 An Ansible module for easy querying of the Apt package cache.
 
